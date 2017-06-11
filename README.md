@@ -1,7 +1,7 @@
 # GMapsTable
-JavaScript library for dynamic tables on Google Maps
+JavaScript library for dynamic tables on Google Maps and full, well-commented example of it's work.
 
-## The usage
+## The usage briefly
 
 In your HTML:
 
@@ -33,3 +33,23 @@ container.scaler = function getScale(zoom) {
     ... return some number
 }
 ```
+
+## List of properties
+
+You may specify the following properties of DataContainer:
+
+1) `scaler(zoom)` — translates GoogleMaps zoom to GMapsTable scale. Both are integer numbers.
+
+2) `dataLoader(scale, borders)` — is called when DataContainer needs new data. Must call `DataContainer.processData(data)`.
+
+`borders` is a JavaScript object with properties minlat, maxlat, minlon, maxlon — current bounds of Google Maps view with big padding on each side.
+
+3) `tableBeforeInit(map, table, data)` — is called when table element was created but not filled with rows and cells. `map` is a Google Maps object, `table` is an HTML element, and data is your data object for current scale.
+
+4) `cellFormatter(td, val)` — is called when table is generating. `td` is an HTML element, a cell of the table. `val` is a value from your data object.
+
+5) `boundsChangedListener(zoom)` — is called when Google Maps bounds are changed.
+
+6) `minZoomLevel`, `maxZoomLevel` — minimal and maximal zoom of Google Maps. Integer numbers ranged between 1 (world map) and 22 (street view).
+
+Only the 1st and 2nd are necessary for DataContainer successful operation.
