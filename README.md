@@ -1,5 +1,8 @@
 # GMapsTable
-JavaScript library for dynamic tables on Google Maps and full, well-commented example of it's work.
+JavaScript library for dynamic visualising of datasets as tables on Google Maps and full, well-commented example of it's work.
+[Live example is here.](http://www.aivanf.com/static/gmt/example.html)
+
+![TMapsTable screenshot](http://www.aivanf.com/static/pics/gmt_s.jpg)
 
 ## The usage briefly
 
