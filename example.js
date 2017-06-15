@@ -80,10 +80,14 @@ container.cellFormatter = function (td, val) {
             (Math.round(Math.pow(val, 0.5)) % 10).toString() + ":" +
             (Math.round(Math.log(val)) % 10).toString() + "]";
 
-        // fill cell according to max value
-        var t = 0.8 * parseFloat(val) / tmax;
+        // cell alpha according to max value
+        var a = 0.8 * parseFloat(val) / tmax;
+        // and some values for other channels
+        var r = 120 + xx * 10;
+        var g = 120 + yy * 10;
+        var b = 222;
         td.style.border = '1px solid #7799bb';
-        td.style.background = 'rgba(127,159,255,' + t.toString() + ')';
+        td.style.background = 'rgba(' + r.toString() + ',' + g.toString() + ',' + b.toString() + ',' + a.toString() + ')';
     }
 };
 
