@@ -73,10 +73,12 @@ container.dataLoader = function (scale, borders) {
 container.cellFormatter = function (td, val) {
     // no need to draw empty cells
     if (val !== "0") {
-        // set cell text from the value
-        // if your value is a dictionary,
-        // then here you can set custom layout
-        td.innerHTML = val.toString();
+        // set cell text from the value and some additional fake info
+        //       if your value is a dictionary,
+        //       then this is the place to set custom layout
+        td.innerHTML = val.toString() + "<br>[" +
+            (Math.round(Math.pow(val, 0.5)) % 10).toString() + ":" +
+            (Math.round(Math.log(val)) % 10).toString() + "]";
 
         // fill cell according to max value
         var t = 0.8 * parseFloat(val) / tmax;
