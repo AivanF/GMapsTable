@@ -2,7 +2,8 @@
 JavaScript library for dynamic visualising of datasets as tables on Google Maps and full, well-commented example of it's work.
 [Live example is here.](http://www.aivanf.com/static/gmt/example.html)
 
-![TMapsTable screenshot](http://www.aivanf.com/static/pics/gmt_s.jpg)
+![TMapsTable screenshot 0](http://www.aivanf.com/static/gmt/gmt_s0.jpg)
+![TMapsTable screenshot 1](http://www.aivanf.com/static/gmt/gmt_s1.jpg)
 
 ## The usage briefly
 
@@ -47,9 +48,9 @@ You may specify the following properties of DataContainer:
 
 `borders` is a JavaScript object with properties minlat, maxlat, minlon, maxlon — current bounds of Google Maps view with big padding on each side.
 
-3) `tableBeforeInit(map, table, data)` — is called when table element was created but not filled with rows and cells. `map` is a Google Maps object, `table` is an HTML element, and data is your data object for current scale.
+3) `tableBeforeInit(map, table, data)` — is called when table element was created but not filled with rows and cells. `map` is a Google Maps object, `table` is an HTML element, and data is your data object for current scale. Here you can prepare your table, some variables with actual data object and current maps parameters.
 
-4) `cellFormatter(td, val)` — is called when table is generating. `td` is an HTML element, a cell of the table. `val` is a value from your data object.
+4) `cellFormatter(td, val)` — is called when table is generating. `td` is an HTML element, a cell of the table. `val` is a value from your data object. Here you can easily set output for multiple values or fill background according to some parameters.
 
 5) `boundsChangedListener(zoom)` — is called when Google Maps bounds are changed.
 
