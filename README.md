@@ -38,6 +38,24 @@ container.scaler = function getScale(zoom) {
 }
 ```
 
+Structure of the data object:
+
+```javascript
+data: {
+	minLat: float,
+	difLat: float,
+	minLon: float,
+	difLon: float,
+	scale: int,
+	table: [
+		[value, value, ...],
+		[value, value, ...],
+		...
+	],
+	tocache: boolean
+}
+```
+
 ## List of properties
 
 You may specify the following properties of DataContainer:
